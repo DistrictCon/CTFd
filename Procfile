@@ -1,1 +1,1 @@
-web: gunicorn -w 4 'CTFd:create_app()'
+web: python serve.py
