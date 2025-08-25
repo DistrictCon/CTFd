@@ -1,1 +1,1 @@
-web: python serve.py --port $PORT
+web: gunicorn 'CTFd:create_app()' --bind '0.0.0.0:$PORT' --workers 1
