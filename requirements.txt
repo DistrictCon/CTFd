@@ -201,3 +201,6 @@ zope-interface==7.2
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
+
+# Added by JSK 8/2025
+psycopg2-binary==2.9.6
