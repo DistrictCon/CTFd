@@ -103,6 +103,9 @@ class ServerConfig(object):
             DATABASE_URL = f"sqlite:///{os.path.dirname(os.path.abspath(__file__))}/ctfd.db"
 
     REDIS_URL: str = empty_str_cast(config_ini["server"]["REDIS_URL"])
+    REDIS_OPTIONS: str = empty_str_cast(config_ini["server"]["REDIS_OPTIONS"])
+    if REDIS_URL and REDIS_OPTIONS:
+        REDIS_URL = REDIS_URL + "?" + REDIS_OPTIONS
 
     REDIS_HOST: str = empty_str_cast(config_ini["server"]["REDIS_HOST"])
     REDIS_PROTOCOL: str = empty_str_cast(config_ini["server"]["REDIS_PROTOCOL"]) or "redis"
